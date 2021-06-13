@@ -2,11 +2,10 @@
 ![Go](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Go/badge.svg?branch=master)
 ![Publish](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Publish%20Docker%20image/badge.svg)
 
-
 ## Running the mock server
 
 ```bash
-$ docker run -p 3000:3000
+$ docker run -p 3000:3000 ayushjhafm/tmai.server.mock
 ```
 
 ### Structure of api.json

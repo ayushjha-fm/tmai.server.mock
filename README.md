@@ -19,6 +19,7 @@ The features for this mock server are described below.
 * Manage state of suggestions based on availability of `CONVERSATION_TOKEN`
 * Read and send JSON responses by reading from JSON files with same name as the endpoint path.
   For example, the `/text` endpoint will read from `tmai/text.json` file.
+* Customize the type of suggestion you are expecting from a message response.
 
 ### Structure of api.json
 
@@ -47,6 +48,22 @@ The features for this mock server are described below.
 | status     | The status returned in response                          |
 | type       | There are two types of responses, "message" and "trivia" |
 | methods    | Which HTTP Methods should the endpoints support          |
+
+### Customize suggestions type
+
+By using `Suggestions` Header in the request, users can control the type of suggestion they get.
+There are four types of suggestions,
+
+| Suggestion                            | Header Value      |
+|---------------------------------------|-------------------|
+| Explore Stabby Suggestion             | Explore-Stabby    |
+| Explore popular quesitons with stabby | Explore-Questions |
+| Get Suggested Questions               | Suggest-Questions |
+| No Suggestions necessary              | No-Suggest        |
+
+By sending one or more of these as request, you can customize the type of suggestions you want.
+For example, `Suggestions: Explore-Stabby, Suggest-Questions` will send both explore stabby and
+suggest-questions suggestions with the response.
 
 ## License
 

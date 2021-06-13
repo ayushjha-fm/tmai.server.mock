@@ -1,114 +1,42 @@
 
-![Go](https://github.com/tkc/go-json-server/workflows/Go/badge.svg?branch=master)
-
-```
-  ___          _                 ___                      
- / __|___   _ | |__ _ ___ _ _   / __| ___ _ ___ _____ _ _ 
-| (_ / _ \ | || / _` / _ \ ' \  \__ \/ -_) '_\ V / -_) '_|
- \___\___/  \__/\__,_\___/_||_| |___/\___|_|  \_/\___|_|  
-                                                          
-```                                                
-
-simple and quick golang JSON mock server.  
-simulate an http server and return the specified json according to a custom route.
+![Go](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Go/badge.svg?branch=master)
+![Publish](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Publish%20Docker%20image/badge.svg)
 
 
-- static json api server
-- static file server
-- [ ] cache response and reload
-- [ ] change api.json path
-- [ ] url param
-- [ ] server deamon
-- [ ] jwt or session auth
-- [ ] error response
-- [ ] access log
-- [ ] E2E test sample source in Github Actions
-
-## Install
+## Running the mock server
 
 ```bash
-$ go get -u github.com/tkc/go-json-server
+$ docker run -p 3000:3000
 ```
 
-## Prepare api.json
-
-```bash
-- api.json // required 
-- response.json
-```
-
-See example  
-https://github.com/tkc/go-json-server/tree/master/example
-
-## Serve Mock Server
-```bash
-$ go-json-server
-```
-
-### Sample Json Setting
-
+### Structure of api.json
 
 `api.json`
 
 ```javascript
 {
-  "port": 3000,
-  "endpoints": [
-     {
-      "method": "GET",
-      "status": 200,
-      "path": "/",
-      "jsonPath": "./health-check.json"
-    },
-    {
-      "method": "GET",
-      "status": 200,
-      "path": "/users",
-      "jsonPath": "./users.json"
-    },
-    {
-      "method": "GET",
-      "status": 200,
-      "path": "/user/1",
-      "jsonPath": "./user.json"
-    },
-    {
-      "path": "/file",
-      "folder": "./static"
-    }
-  ]
+    "endpoints": [{
+            "path": "/text",
+            "status": 200,
+            "type": "message",
+            "methods": [
+                "GET",
+                "POST"
+            ]
+    }],
+    "port": 3000
 }
 ```
 
+#### Structure of Endpoint
 
-`health-check.json`
-```javascript
-{
-    "status": "ok",
-    "message": "go-json-server"
-}
-```
+| Field Name | Definition                                               |
+|------------|----------------------------------------------------------|
+| path       | The path for which this endpoint will serve a file       |
+| status     | The status returned in response                          |
+| type       | There are two types of responses, "message" and "trivia" |
+| methods    | Which HTTP Methods should the endpoints support          |
 
-`users.json`
-```javascript
-[
-  {
-    "id":1,
-    "name": "name"
-  }
-]
-```
-
-`user.json`
-```javascript
-{
-  "id": 1,
-  "name": "name",
-  "address": "address"
-}
-```
 ## License
 
 MIT ✨
-
-

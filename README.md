@@ -2,6 +2,17 @@
 ![Go](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Go/badge.svg?branch=master)
 ![Publish](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Publish%20Docker%20image/badge.svg)
 
+```
+
+ ▗       ▝                                                  ▐
+▗▟▄ ▗▄▄ ▗▄   ▄▖      ▄▖  ▄▖  ▖▄ ▗ ▗  ▄▖  ▖▄     ▗▄▄  ▄▖  ▄▖ ▐ ▗
+ ▐  ▐▐▐  ▐  ▝ ▐     ▐ ▝ ▐▘▐  ▛ ▘▝▖▞ ▐▘▐  ▛ ▘    ▐▐▐ ▐▘▜ ▐▘▝ ▐▗▘
+ ▐  ▐▐▐  ▐  ▗▀▜      ▀▚ ▐▀▀  ▌   ▙▌ ▐▀▀  ▌      ▐▐▐ ▐ ▐ ▐   ▐▜
+ ▝▄ ▐▐▐ ▗▟▄ ▝▄▜  ▐  ▝▄▞ ▝▙▞  ▌   ▐  ▝▙▞  ▌   ▐  ▐▐▐ ▝▙▛ ▝▙▞ ▐ ▚
+
+```
+
+
 Table of Contents
 =================
 * [Running the mock server](#running-the-mock-server)

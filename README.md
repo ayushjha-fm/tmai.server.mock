@@ -1,17 +1,17 @@
 
-![Go](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Go/badge.svg?branch=master)
-![Publish](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Publish%20Docker%20image/badge.svg)
+[![Go](https://github.com/ayushjha-fm/tmai.server.mock/actions/workflows/go.yml/badge.svg)](https://github.com/ayushjha-fm/tmai.server.mock/actions/workflows/go.yml)
+[![Publish Docker image](https://github.com/ayushjha-fm/tmai.server.mock/actions/workflows/docker.yml/badge.svg)](https://github.com/ayushjha-fm/tmai.server.mock/actions/workflows/docker.yml)
 
 ```
 
-╔════╗╔═╗╔═╗╔═══╗╔══╗    ╔═╗╔═╗        ╔╗      ╔═══╗                  
-║╔╗╔╗║║║╚╝║║║╔═╗║╚╣╠╝    ║║╚╝║║        ║║      ║╔═╗║                  
+╔════╗╔═╗╔═╗╔═══╗╔══╗    ╔═╗╔═╗        ╔╗      ╔═══╗
+║╔╗╔╗║║║╚╝║║║╔═╗║╚╣╠╝    ║║╚╝║║        ║║      ║╔═╗║
 ╚╝║║╚╝║╔╗╔╗║║║ ║║ ║║     ║╔╗╔╗║╔══╗╔══╗║║╔╗    ║╚══╗╔══╗╔═╗╔╗╔╗╔══╗╔═╗
   ║║  ║║║║║║║╚═╝║ ║║     ║║║║║║║╔╗║║╔═╝║╚╝╝    ╚══╗║║╔╗║║╔╝║╚╝║║╔╗║║╔╝
- ╔╝╚╗ ║║║║║║║╔═╗║╔╣╠╗    ║║║║║║║╚╝║║╚═╗║╔╗╗    ║╚═╝║║║═╣║║ ╚╗╔╝║║═╣║║ 
- ╚══╝ ╚╝╚╝╚╝╚╝ ╚╝╚══╝    ╚╝╚╝╚╝╚══╝╚══╝╚╝╚╝    ╚═══╝╚══╝╚╝  ╚╝ ╚══╝╚╝ 
-                                                                      
-                                                                      
+ ╔╝╚╗ ║║║║║║║╔═╗║╔╣╠╗    ║║║║║║║╚╝║║╚═╗║╔╗╗    ║╚═╝║║║═╣║║ ╚╗╔╝║║═╣║║
+ ╚══╝ ╚╝╚╝╚╝╚╝ ╚╝╚══╝    ╚╝╚╝╚╝╚══╝╚══╝╚╝╚╝    ╚═══╝╚══╝╚╝  ╚╝ ╚══╝╚╝
+
+
 ```
 
 

@@ -18,4 +18,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ayys/tmai.server.mock:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/tmai.server.mock:latest

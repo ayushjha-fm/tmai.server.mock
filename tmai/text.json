@@ -2,7 +2,7 @@
     "query": "<original question>",
     "meta": {
     },
-    "response": {
+    "data": {
         "messages": [
             {
                 "meta": {

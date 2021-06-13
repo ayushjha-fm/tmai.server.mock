@@ -2,7 +2,22 @@
 ![Go](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Go/badge.svg?branch=master)
 ![Publish](https://github.com/ayushjha-fm/tmai.server.mock/workflows/Publish%20Docker%20image/badge.svg)
 
-## Running the mock server
+Table of Contents
+=================
+* [Running the mock server](#running-the-mock-server)
+* [Using the Server](#using-the-server)
+* [Some example cURL commands](#some-example-curl-commands)
+* [Some example fetch commands](#some-example-fetch-commands)
+* [How does it work](#how-does-it-work)
+* [Features](#features)
+* [Structure of api.json](#structure-of-apijson)
+* [Structure of Endpoint](#structure-of-endpoint)
+* [Customize messages type](#customize-messages-type)
+* [Customize suggestions type](#customize-suggestions-type)
+* [License](#license)
+
+
+### Running the mock server
 
 ```bash
 ## Pull the image separately so you always have the latest version
@@ -234,6 +249,6 @@ By sending one or more of these as request, you can customize the type of sugges
 For example, `Suggestions: Explore-Stabby, Suggest-Questions` will send both explore stabby and
 suggest-questions suggestions with the response in the specified order.
 
-## License
+### License
 
 MIT ✨

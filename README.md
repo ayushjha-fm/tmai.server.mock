@@ -5,6 +5,8 @@
 ## Running the mock server
 
 ```bash
+## Pull the image separately so you always have the latest version
+docker pull ayushjhafm/tmai.server.mock:latest
 docker run -p 3000:3000 ayushjhafm/tmai.server.mock
 ```
 

@@ -1,0 +1,24 @@
+{
+    "meta": {
+        "...": "...contains meta info that may ne useful in the future"
+    },
+    "type": "infographics",
+    "title": "Title of infographic message",
+    "content": [
+        {
+            "name": "New York",
+            "data": "URL TO IMAGE OR BASE64",
+            "datatype": "URL / BASE64; specify the type of data"
+        },
+        {
+            "name": "Gorgia",
+            "data": "URL TO IMAGE OR BASE64",
+            "datatype": "URL / BASE64; specify the type of data"
+        },
+        {
+            "name": "Boston",
+            "data": "URL TO IMAGE OR BASE64",
+            "datatype": "URL / BASE64; specify the type of data"
+        }
+    ]
+}

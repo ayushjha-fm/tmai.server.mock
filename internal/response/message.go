@@ -1,15 +1,14 @@
 package response
 
 import (
-	"bytes"
 	"encoding/json"
-	"io/ioutil"
-	"log"
 	"net/http"
-	"os"
 
 	"tmai.server.mock/internal/config"
 	"tmai.server.mock/internal/logger"
+	"tmai.server.mock/internal/messages"
+	"tmai.server.mock/internal/request"
+	"tmai.server.mock/internal/suggestions"
 )
 
 type MessageResponseType struct {
@@ -24,14 +23,8 @@ func MessageResponse(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
 	appLogger := logger.CreateLogger()
-
+	request, _ := request.GetRequestObj(*r)
 	appLogger.AccessLog(r)
-	var requestBody config.RequestBody
-	body, ioerr := ioutil.ReadAll(r.Body)
-	if ioerr != nil {
-		log.Fatal(ioerr)
-	}
-	json.Unmarshal(body, &requestBody)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Credentials", "true")
 	w.Header().Set("Access-Control-Allow-Headers",
@@ -55,35 +48,18 @@ func MessageResponse(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set(config.HeaderConversationToken, conversation_header)
 			}
 			w.WriteHeader(ep.Status)
-			b := path2Response(ep.Path, requestBody.Query)
+			b := path2Response(ep.Path, request)
 			w.Write(b)
 		}
 		continue
 	}
 }
 
-func path2Response(path string, query string) []byte {
-	file, err := os.Open(config.BaseDir + path + ".json")
-	if err != nil {
-		log.Print(err)
-		os.Exit(1)
-	}
-	defer file.Close()
-	buf := new(bytes.Buffer)
-	buf.ReadFrom(file)
-	bytes := buf.Bytes()
-	if query != "" {
-		response := MessageResponseType{}
-		jsonErr := json.Unmarshal(buf.Bytes(), &response)
-		if jsonErr != nil {
-			return bytes
-		}
-		response.Query = query
-		js_out, jsonMarshalError := json.Marshal(response)
-		if jsonMarshalError != nil {
-			return bytes
-		}
-		return js_out
-	}
-	return bytes
+func path2Response(path string, request request.Request) []byte {
+	response := MessageResponseType{}
+	response.Query = request.Body.Query
+	response.Data = messages.GetMessages(request)
+	response.Suggestions = suggestions.GetSuggestions(request)
+	js_out, _ := json.Marshal(response)
+	return js_out
 }

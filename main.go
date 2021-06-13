@@ -14,7 +14,6 @@ func main() {
 	if len(os.Args[1:]) == 1 {
 		config.BaseDir = os.Args[1]
 	}
-
 	config.CreateApi()
 
 	for _, ep := range config.Api.Endpoints {

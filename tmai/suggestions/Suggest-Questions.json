@@ -1,0 +1,14 @@
+{
+    "questions": [
+        {
+            "text": "<TEXT FOR QUESTION>"
+        },
+        {
+            "text": "<TEXT FOR QUESTION>"
+        },
+        {
+            "text": "<TEXT FOR QUESTION>"
+        }
+    ],
+    "type": "suggested_questions"
+}

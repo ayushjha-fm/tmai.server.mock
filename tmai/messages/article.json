@@ -1,0 +1,34 @@
+{
+    "meta": {
+        "...": "...contains meta info that may ne useful in the future"
+    },
+    "type": "article",
+    "title": "<Title of article>",
+    "author": {
+        "name": "<Name of author>",
+        "twitter_username": "Username without @"
+    },
+    "pub_date": "Date of publication",
+    "source_url": "URL to the source of article",
+    "content": "Text blob with all the content",
+    "slice": {
+        "form": 0,
+        "to": 10
+    },
+    "other_questions": [
+        {
+            "query": "<Question to display>",
+            "slice": {
+                "form": 10,
+                "to": 340
+            }
+        },
+        {
+            "query": "<Question to display>",
+            "slice": {
+                "form": 78,
+                "to": 89
+            }
+        }
+    ]
+}

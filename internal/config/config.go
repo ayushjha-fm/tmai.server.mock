@@ -17,6 +17,10 @@ const (
 	MIMEApplicationJSON     = "application/json"
 )
 
+type Question struct {
+	Text string `json:"text"`
+}
+
 type Endpoint struct {
 	Type    string   `json:"type"`
 	Methods []string `json:"methods"`
@@ -29,10 +33,6 @@ type API struct {
 	Host      string     `json:"host"`
 	Port      int        `json:"port"`
 	Endpoints []Endpoint `json:"endpoints"`
-}
-
-type RequestBody struct {
-	Query string `json:"query"`
 }
 
 var BaseDir string = "."

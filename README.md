@@ -5,7 +5,7 @@
 ## Running the mock server
 
 ```bash
-$ docker run -p 3000:3000 ayushjhafm/tmai.server.mock
+docker run -p 3000:3000 ayushjhafm/tmai.server.mock
 ```
 
 ### How does it work

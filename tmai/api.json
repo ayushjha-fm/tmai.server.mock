@@ -1,25 +1,50 @@
 {
-    "port": 3000,
     "endpoints": [
         {
-            "methods": ["GET", "POST"],
+            "path": "/article",
             "status": 200,
-            "path": "/article"
+            "type": "message",
+            "methods": [
+                "GET",
+                "POST"
+            ]
         },
         {
-            "method": ["GET"],
+            "path": "/text",
             "status": 200,
-            "path": "/text"
+            "type": "message",
+            "methods": [
+                "GET",
+                "POST"
+            ]
         },
         {
-            "method": ["GET"],
+            "path": "/infographic",
             "status": 200,
-            "path": "/infographic"
+            "type": "message",
+            "methods": [
+                "GET",
+                "POST"
+            ]
         },
         {
-            "method": ["GET"],
+            "path": "/suggested-topics",
             "status": 200,
-            "path": "/suggested-topics"
+            "type": "message",
+            "methods": [
+                "GET",
+                "POST"
+            ]
+        },
+        {
+            "path": "/trivia",
+            "status": 200,
+            "type": "trivia",
+            "methods": [
+                "GET",
+                "POST"
+            ]
         }
-    ]
+    ],
+    "port": 3000
 }

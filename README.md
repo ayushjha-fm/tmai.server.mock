@@ -146,6 +146,21 @@ Output
 }
 ```
 
+
+#### Some example fetch commands
+
+```javasript
+await fetch("http://localhost:3000/message", {
+    "credentials": "include",
+    "headers": {
+        "Messages": "text, article",
+        "Suggestions": "Explore-Stabby"
+    },
+    "body": "{\n\"query\": \"hello, are you alive?\"\n}",
+    "method": "GET",
+});
+```
+
 ### How does it work
 
 The server serves JSON files in the `tmai` directory, as per the rules

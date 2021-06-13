@@ -1,4 +1,4 @@
-FROM golang:1.13.0-stretch AS builder
+FROM golang:1.16.0-stretch AS builder
 
 ENV GO111MODULE=on \
     CGO_ENABLED=1
@@ -38,12 +38,5 @@ RUN mkdir /data
 FROM scratch
 
 COPY --chown=0:0 --from=builder /dist /
-
-# Set up the app to run as a non-root user inside the /data folder
-# User ID 65534 is usually user 'nobody'.
-# The executor of this image should still specify a user during setup.
-COPY --chown=65534:0 --from=builder /data /data
-USER 65534
-WORKDIR /data
 
 ENTRYPOINT ["/tmai.server.mock", "/tmai"]

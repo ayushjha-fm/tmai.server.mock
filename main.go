@@ -14,6 +14,8 @@ func main() {
 	if len(os.Args[1:]) == 1 {
 		config.BaseDir = os.Args[1]
 	}
+	log.Println(string("\033[32m"), "TMAI Mock Server running at http://localhost:3000", string("\033[0m"))
+
 	config.CreateApi()
 
 	for _, ep := range config.Api.Endpoints {

@@ -32,6 +32,7 @@ func TriviaResponse(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Headers",
 		"Origin, X-Requested-With, Content-Type, Accept, Authorization, Conversation-Token")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	conversation_header := w.Header().Get(config.HeaderConversationToken)
 	for _, ep := range config.Api.Endpoints {
 		// check if method matches

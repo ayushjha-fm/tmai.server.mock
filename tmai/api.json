@@ -10,6 +10,15 @@
             ]
         },
         {
+            "path": "/autocomplete",
+            "status": 200,
+            "type": "autocomplete",
+            "methods": [
+                "GET",
+                "POST"
+            ]
+        },
+        {
             "path": "/trivia",
             "status": 200,
             "type": "trivia",

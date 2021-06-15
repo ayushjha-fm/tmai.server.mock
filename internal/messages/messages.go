@@ -76,6 +76,7 @@ func getTextMessage() (m MessageType) {
 		fmt.Println(ioerr.Error())
 		return m
 	}
+	m.Type = "text"
 	json.Unmarshal(raw, &m)
 	m.Content = []byte(`"` + lorem.Sentence(15, 30) + `"`)
 	return m
@@ -89,6 +90,7 @@ func getArticleMessage() (m MessageType) {
 		return m
 	}
 	json.Unmarshal(raw, &m)
+	m.Type = "article"
 	m.Title = []byte(`"` + lorem.Sentence(5, 15) + `"`)
 	m.Content = []byte(`"` + lorem.Paragraph(10, 30) + `"`)
 	m.Author = []byte(getAuthor())
@@ -112,6 +114,7 @@ func getSuggestedTopicsMessage() (m MessageType) {
 		return m
 	}
 	json.Unmarshal(raw, &m)
+	m.Type = "infographic"
 	m.Content = []byte(fmt.Sprintf(`[
         {
             "text": "%s"

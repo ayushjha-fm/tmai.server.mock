@@ -4,6 +4,7 @@
     },
     "type": "infographics",
     "title": "Title of infographic message",
+    "description": "text message that is above title",
     "content": [
         {
             "name": "New York",

@@ -29,6 +29,7 @@ type MessageType struct {
 	Author          json.RawMessage `json:"author,omitempty"`
 	OtherQuestions  json.RawMessage `json:"other_questions,omitempty"`
 	Link            json.RawMessage `json:"link,omitempty"`
+	Description     json.RawMessage `json:"description,omitempty"`
 	Slice           json.RawMessage `json:"slice,omitempty"`
 }
 

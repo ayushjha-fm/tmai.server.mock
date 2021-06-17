@@ -117,16 +117,27 @@ func getSuggestedTopicsMessage() (m MessageType) {
 	}
 	json.Unmarshal(raw, &m)
 	m.Type = "infographic"
-	m.Content = []byte(fmt.Sprintf(`[
+	m.Content = []byte(fmt.Sprintf(
+		`[
         {
-            "text": "%s"
+            "text": "%s",
+            "icon": "%s"
         },
         {
-            "text": "%s"
+            "text": "%s",
+            "icon": "%s"
         },
         {
-            "text": "%s"
+            "text": "%s",
+            "icon": "%s"
         }
-    ]`, lorem.Sentence(2, 4), lorem.Sentence(2, 4), lorem.Sentence(2, 4)))
+    ]`,
+		lorem.Sentence(2, 4),
+		lorem.Sentence(2, 4), // image blob
+		lorem.Sentence(2, 4),
+		lorem.Sentence(2, 4), // image blob
+		lorem.Sentence(2, 4),
+		lorem.Sentence(2, 4), // image blob
+	))
 	return m
 }

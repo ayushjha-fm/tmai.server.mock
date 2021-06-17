@@ -5,13 +5,16 @@
     "type": "suggested_topics",
     "content": [
         {
-            "text": "<TEXT FOR QUESTION>"
+            "text": "<TEXT FOR QUESTION>",
+            "icon": "/base64 blob"
         },
         {
-            "text": "<TEXT FOR QUESTION>"
+            "text": "<TEXT FOR QUESTION>",
+            "icon": "/base64 blob"
         },
         {
-            "text": "<TEXT FOR QUESTION>"
+            "text": "<TEXT FOR QUESTION>",
+            "icon": "/base64 blob"
         }
     ]
 }

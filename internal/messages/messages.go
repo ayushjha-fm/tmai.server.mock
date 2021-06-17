@@ -28,6 +28,7 @@ type MessageType struct {
 	SourceUrl       json.RawMessage `json:"source_url,omitempty"`
 	Author          json.RawMessage `json:"author,omitempty"`
 	OtherQuestions  json.RawMessage `json:"other_questions,omitempty"`
+	Link            json.RawMessage `json:"link,omitempty"`
 	Slice           json.RawMessage `json:"slice,omitempty"`
 }
 
@@ -91,8 +92,9 @@ func getArticleMessage() (m MessageType) {
 	}
 	json.Unmarshal(raw, &m)
 	m.Type = "article"
+	m.Link = []byte("\"https://times.com/articlelink\"")
 	m.Title = []byte(`"` + lorem.Sentence(5, 15) + `"`)
-	m.Content = []byte(`"` + lorem.Paragraph(10, 30) + `"`)
+	m.Content = []byte(`"` + lorem.Paragraph(5, 5) + `"`)
 	m.Author = []byte(getAuthor())
 	m.SourceUrl = []byte(`"` + "times.com" + `"`)
 	m.PublicationDate = []byte(`"2020-12-12"`)

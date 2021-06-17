@@ -15,6 +15,7 @@
         "form": 0,
         "to": 10
     },
+    "link": "link to article",
     "other_questions": [
         {
             "query": "<Question to display>",

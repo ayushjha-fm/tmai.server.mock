@@ -1,27 +1,30 @@
 package response
 
 import (
-	"io/ioutil"
+	"encoding/json"
 	"log"
 	"net/http"
 	"strings"
 
+	lorem "github.com/drhodes/golorem"
 	"tmai.server.mock/internal/config"
 	"tmai.server.mock/internal/logger"
 )
 
-func GetTrivia() ([]byte, error) {
-	resp, getErr := http.Get("https://catfact.ninja/fact")
-	if getErr != nil {
-		return nil, getErr
-	}
-	defer resp.Body.Close()
+type TriviaResponseType struct {
+	Fact   string `json:"fact"`
+	Length int    `json:"length"`
+}
 
-	content, ioErr := ioutil.ReadAll(resp.Body)
-	if ioErr != nil {
-		return nil, ioErr
+func GetTrivia() ([]byte, error) {
+	resp := TriviaResponseType{}
+	resp.Fact = lorem.Sentence(4, 5)
+	resp.Length = len(resp.Fact)
+	data, err := json.Marshal(resp)
+	if err != nil {
+		return nil, err
 	}
-	return content, nil
+	return data, nil
 }
 
 func TriviaResponse(w http.ResponseWriter, r *http.Request) {

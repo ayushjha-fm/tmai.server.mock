@@ -8,17 +8,17 @@
     "content": [
         {
             "name": "New York",
-            "data": "URL TO IMAGE OR BASE64",
+            "data": "https://i.ibb.co/k2wX7sf/1.webp",
             "datatype": "URL / BASE64; specify the type of data"
         },
         {
             "name": "Gorgia",
-            "data": "URL TO IMAGE OR BASE64",
+            "data": "https://i.ibb.co/mRRfB4F/2.webp",
             "datatype": "URL / BASE64; specify the type of data"
         },
         {
             "name": "Boston",
-            "data": "URL TO IMAGE OR BASE64",
+            "data": "https://i.ibb.co/2h2vwcS/198496037-538811274158068-6173627865782858307-n-png.webp",
             "datatype": "URL / BASE64; specify the type of data"
         }
     ]

@@ -2,7 +2,6 @@ package response
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	lorem "github.com/drhodes/golorem"
@@ -59,7 +58,6 @@ func getAutocomplete(path string, request request.Request) []byte {
 	for i := 0; i < 5; i++ {
 		response.Suggestions = append(response.Suggestions, lorem.Sentence(3, 6))
 	}
-	fmt.Println(response.Suggestions)
 	js_out, _ := json.Marshal(response)
 	return js_out
 }

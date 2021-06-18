@@ -7,7 +7,6 @@ import (
 	"strings"
 
 	"tmai.server.mock/internal/config"
-	"tmai.server.mock/internal/request"
 )
 
 type Suggestion struct {
@@ -23,9 +22,9 @@ const (
 )
 
 // GetSuggestions returns suggestions as byte array
-func GetSuggestions(req request.Request) []byte {
+func GetSuggestions(sugegstionsType []string) []byte {
 	var suggestions []Suggestion
-	for _, suggestionType := range req.SuggestionsType {
+	for _, suggestionType := range sugegstionsType {
 		suggestion := getSuggestion(suggestionType)
 		if suggestion.Type != "" {
 			suggestions = append(suggestions, suggestion)

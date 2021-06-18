@@ -3,6 +3,7 @@ package response
 import (
 	"encoding/json"
 	"net/http"
+	"strings"
 
 	"tmai.server.mock/internal/config"
 	"tmai.server.mock/internal/logger"
@@ -24,6 +25,7 @@ func MessageResponse(w http.ResponseWriter, r *http.Request) {
 
 	appLogger := logger.CreateLogger()
 	request, _ := request.GetRequestObj(*r)
+
 	appLogger.AccessLog(r)
 	SetupHeaders(&w, r)
 	if r.Method == "OPTIONS" {
@@ -47,18 +49,28 @@ func MessageResponse(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set(config.HeaderConversationToken, conversation_header)
 			}
 			w.WriteHeader(ep.Status)
-			b := path2Response(ep.Path, request)
+			b := getMessageResponse(ep.Path, request)
 			w.Write(b)
 		}
 		continue
 	}
 }
 
-func path2Response(path string, request request.Request) []byte {
+func getMessageResponse(path string, request request.Request) []byte {
 	response := MessageResponseType{}
 	response.Query = request.Body.Query
-	response.Data = messages.GetMessages(request)
-	response.Suggestions = suggestions.GetSuggestions(request)
+	query_parts := strings.Split(response.Query, ";")
+	if len(request.Body.Query) > 0 {
+		response.Data = messages.GetMessages(strings.Split(query_parts[0], ","))
+	} else {
+		response.Data = messages.GetMessages(request.MessagesType)
+	}
+	if len(query_parts) > 1 {
+		response.Suggestions = suggestions.GetSuggestions(strings.Split(query_parts[1], ","))
+	} else {
+		response.Suggestions = suggestions.GetSuggestions(request.SuggestionsType)
+	}
+
 	js_out, _ := json.Marshal(response)
 	return js_out
 }

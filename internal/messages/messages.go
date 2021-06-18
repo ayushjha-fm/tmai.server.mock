@@ -9,7 +9,6 @@ import (
 
 	lorem "github.com/drhodes/golorem"
 	"tmai.server.mock/internal/config"
-	"tmai.server.mock/internal/request"
 )
 
 const (
@@ -34,9 +33,9 @@ type MessageType struct {
 }
 
 // GetMessages returns messages as byte array
-func GetMessages(req request.Request) []byte {
+func GetMessages(messagesTypes []string) []byte {
 	var messages []MessageType
-	for _, messageType := range req.MessagesType {
+	for _, messageType := range messagesTypes {
 		message := getMessage(messageType)
 		messages = append(messages, message)
 	}

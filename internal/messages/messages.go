@@ -117,7 +117,7 @@ func getSuggestedTopicsMessage() (m MessageType) {
 		return m
 	}
 	json.Unmarshal(raw, &m)
-	m.Type = "infographic"
+	m.Type = "suggested-topics"
 	m.Content = []byte(fmt.Sprintf(
 		`[
         {

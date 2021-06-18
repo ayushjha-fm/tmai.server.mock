@@ -1,3 +1,5 @@
 {
-    "type": "explore_stabby"
+    "type": "explore_stabby",
+    "text": "Explore what Stabby Can do",
+    "message_type": "predefined-button"
 }

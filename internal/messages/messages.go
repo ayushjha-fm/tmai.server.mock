@@ -49,6 +49,7 @@ func GetMessages(req request.Request) []byte {
 
 // getMessage returns a message
 func getMessage(messageType string) (message MessageType) {
+	message = getTextMessage()
 	if messageType == "" {
 		return message
 	}
@@ -95,7 +96,7 @@ func getArticleMessage() (m MessageType) {
 	m.Type = "article"
 	m.Link = []byte("\"https://times.com/articlelink\"")
 	m.Title = []byte(`"` + lorem.Sentence(5, 15) + `"`)
-	m.Content = []byte(`"` + lorem.Paragraph(5, 5) + `"`)
+	m.Content = []byte(`"` + lorem.Paragraph(3, 3) + `"`)
 	m.Author = []byte(getAuthor())
 	m.SourceUrl = []byte(`"` + "times.com" + `"`)
 	m.PublicationDate = []byte(`"2020-12-12"`)

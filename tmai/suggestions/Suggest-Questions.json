@@ -1,13 +1,20 @@
 {
     "questions": [
         {
-            "text": "<TEXT FOR QUESTION>"
+            "text": "When will Covid be over?",
+            "type": "predefined-button"
         },
         {
-            "text": "<TEXT FOR QUESTION>"
+            "type": "predefined-button",
+            "text": "How does Covid-19 spread?"
         },
         {
-            "text": "<TEXT FOR QUESTION>"
+            "type": "predefined-button",
+            "text": "How can I protect myself?"
+        },
+        {
+            "type": "predefined-button",
+            "text": "What treatments are available for COVID-19?"
         }
     ],
     "type": "suggested_questions"

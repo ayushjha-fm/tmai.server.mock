@@ -7,8 +7,14 @@ import (
 	"strings"
 )
 
+const (
+	PreDefinedMessage  string = "predefined"
+	UserDefinedMessage string = "userdefined"
+)
+
 type RequestBody struct {
 	Query string `json:"query"`
+	Id    string `json:"id"`
 }
 
 type Request struct {

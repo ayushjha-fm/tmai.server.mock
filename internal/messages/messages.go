@@ -15,6 +15,7 @@ const (
 	ArticleMessage          string = "article"
 	TextMessage             string = "text"
 	InfographicMessage      string = "infographic"
+	GraphMessage            string = "graph"
 	SuggestionTopicsMessage string = "suggested-topics"
 )
 

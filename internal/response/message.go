@@ -2,6 +2,7 @@ package response
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"strings"
 
@@ -49,6 +50,7 @@ func MessageResponse(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set(config.HeaderConversationToken, conversation_header)
 			}
 			w.WriteHeader(ep.Status)
+			log.Println("Hello")
 			b := getMessageResponse(ep.Path, request)
 			w.Write(b)
 		}
@@ -60,6 +62,12 @@ func getMessageResponse(path string, request request.Request) []byte {
 	response := MessageResponseType{}
 	response.Query = request.Body.Query
 	query_parts := strings.Split(response.Query, ";")
+	if request.Body.Id == "" {
+		response.Meta = []byte(`"userdefined"`)
+	} else {
+		response.Meta = []byte(`"predefined"`)
+	}
+
 	if len(request.Body.Query) > 0 {
 		response.Data = messages.GetMessages(strings.Split(query_parts[0], ","))
 	} else {

@@ -25,7 +25,6 @@ func main() {
 		} else if ep.Type == "message" {
 			http.HandleFunc(ep.Path, response.MessageResponse)
 		} else if ep.Type == "autocomplete" {
-			log.Println("autocomplete")
 			http.HandleFunc(ep.Path, response.AutocompleteResponse)
 		} else if ep.Type == "trivia" {
 			http.HandleFunc(ep.Path, response.TriviaResponse)

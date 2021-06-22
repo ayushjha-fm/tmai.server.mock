@@ -2,7 +2,7 @@
     "meta": {
         "...": "...contains meta info that may ne useful in the future"
     },
-    "type": "infographics",
+    "type": "graph",
     "title": "Title of infographic message",
     "description": "text message that is above title",
     "content": [

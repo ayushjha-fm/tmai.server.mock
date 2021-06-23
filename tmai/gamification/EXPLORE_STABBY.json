@@ -1,8 +1,8 @@
-{
-    "type": "suggested_topics",
+[{
     "meta": {
         "...": "...contains meta info that may ne useful in the future"
     },
+    "type": "suggested_topics",
     "content": [
         {
             "text": "Travel during Covid-19",
@@ -41,4 +41,4 @@
             "intent": "VACCINE_PASSPORT"
         }
     ]
-}
+}]

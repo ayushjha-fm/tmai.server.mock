@@ -4,31 +4,17 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"strings"
 
 	"tmai.server.mock/internal/config"
 	"tmai.server.mock/internal/logger"
-	"tmai.server.mock/internal/messages"
+	"tmai.server.mock/internal/pdmh"
 	"tmai.server.mock/internal/request"
-	"tmai.server.mock/internal/suggestions"
 )
 
-type MessageResponseType struct {
-	Query       string          `json:"query"`
-	Meta        json.RawMessage `json:"meta"`
-	Data        json.RawMessage `json:"data"`
-	Suggestions json.RawMessage `json:"suggestions"`
-}
-
-func MessageResponse(w http.ResponseWriter, r *http.Request) {
-	log.Println("Hello")
-
-	defer r.Body.Close()
-
+func PDMHResponse(w http.ResponseWriter, r *http.Request) {
 	appLogger := logger.CreateLogger()
-	request, _ := request.GetRequestObj(*r)
-
 	appLogger.AccessLog(r)
+	request, _ := request.GetRequestObj(*r)
 	SetupHeaders(&w, r)
 	if r.Method == "OPTIONS" {
 		return
@@ -51,34 +37,26 @@ func MessageResponse(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set(config.HeaderConversationToken, conversation_header)
 			}
 			w.WriteHeader(ep.Status)
-			b := getMessageResponse(ep.Path, request)
+			b, err := getGamificationMessage(request.Body.Intent, request)
+			if err != nil {
+				log.Println(err)
+			}
 			w.Write(b)
 		}
 		continue
 	}
 }
 
-func getMessageResponse(path string, request request.Request) []byte {
+func getGamificationMessage(intent string, request request.Request) ([]byte, error) {
 	response := MessageResponseType{}
 	response.Query = request.Body.Query
-	query_parts := strings.Split(response.Query, ";")
 	if request.Body.Intent == "" {
 		response.Meta = []byte(`"userdefined"`)
 	} else {
 		response.Meta = []byte(`"predefined"`)
 	}
 
-	if len(request.Body.Query) > 0 {
-		response.Data = messages.GetMessages(strings.Split(query_parts[0], ","))
-	} else {
-		response.Data = messages.GetMessages(request.MessagesType)
-	}
-	if len(query_parts) > 1 {
-		response.Suggestions = suggestions.GetSuggestions(strings.Split(query_parts[1], ","))
-	} else {
-		response.Suggestions = suggestions.GetSuggestions(request.SuggestionsType)
-	}
-
-	js_out, _ := json.Marshal(response)
-	return js_out
+	response.Data = pdmh.GetGamificationMessages(intent)
+	js_out, err := json.Marshal(response)
+	return js_out, err
 }

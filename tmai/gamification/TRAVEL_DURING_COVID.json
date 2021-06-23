@@ -1,0 +1,54 @@
+[
+    {
+        "meta": {
+        },
+        "type": "text",
+        "content": "Planning to travel somewhere? Travel restrictions are all over the place. I can try to help you if you let me know your travel destination. Haven’t decided? No problem, I can also answer some more general questions. "
+    },
+    {
+        "meta": {
+            "...": "...contains meta info that may ne useful in the future"
+        },
+        "type": "graph",
+        "title": "Title of infographic message",
+        "description": "text message that is above title",
+        "content": [
+            {
+                "name": "New York",
+                "data": "https://i.ibb.co/k2wX7sf/1.webp",
+                "datatype": "URL / BASE64; specify the type of data"
+            },
+            {
+                "name": "Gorgia",
+                "data": "https://i.ibb.co/mRRfB4F/2.webp",
+                "datatype": "URL / BASE64; specify the type of data"
+            },
+            {
+                "name": "Boston",
+                "data": "https://i.ibb.co/2h2vwcS/198496037-538811274158068-6173627865782858307-n-png.webp",
+                "datatype": "URL / BASE64; specify the type of data"
+            }
+        ]
+    },
+    {
+        "type": "suggested_questions",
+        "questions": [
+            {
+                "text": "Travel ban in countries",
+                "type": "predefined-button"
+            },
+            {
+                "type": "predefined-button",
+                "text": "Is it safer to fly or drive?"
+            },
+            {
+                "type": "predefined-button",
+                "text": "How can I protect myself?"
+            },
+            {
+                "type": "predefined-button",
+                "text": "What treatments are available for COVID-19?"
+            }
+        ]
+    }
+]

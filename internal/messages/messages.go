@@ -20,17 +20,20 @@ const (
 )
 
 type MessageType struct {
-	Type            string          `json:"type"`
-	Meta            json.RawMessage `json:"meta"`
-	Title           json.RawMessage `json:"title,omitempty"`
-	Content         json.RawMessage `json:"content,omitempty"`
-	PublicationDate json.RawMessage `json:"pub_date,omitempty"`
-	SourceUrl       json.RawMessage `json:"source_url,omitempty"`
 	Author          json.RawMessage `json:"author,omitempty"`
-	OtherQuestions  json.RawMessage `json:"other_questions,omitempty"`
-	Link            json.RawMessage `json:"link,omitempty"`
+	Content         json.RawMessage `json:"content,omitempty"`
 	Description     json.RawMessage `json:"description,omitempty"`
+	Icon            string          `json:"icon,omitempty"`
+	IconType        string          `json:"icon_type,omitempty"`
+	Intent          string          `json:"intent,omitempty"`
+	Link            json.RawMessage `json:"link,omitempty"`
+	Meta            json.RawMessage `json:"meta"`
+	OtherQuestions  json.RawMessage `json:"other_questions,omitempty"`
+	PublicationDate json.RawMessage `json:"pub_date,omitempty"`
 	Slice           json.RawMessage `json:"slice,omitempty"`
+	SourceUrl       json.RawMessage `json:"source_url,omitempty"`
+	Title           json.RawMessage `json:"title,omitempty"`
+	Type            string          `json:"type"`
 }
 
 // GetMessages returns messages as byte array

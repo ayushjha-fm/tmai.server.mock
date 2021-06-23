@@ -13,8 +13,8 @@ const (
 )
 
 type RequestBody struct {
-	Query string `json:"query"`
-	Id    string `json:"id"`
+	Query  string `json:"query"`
+	Intent string `json:"intent"`
 }
 
 type Request struct {

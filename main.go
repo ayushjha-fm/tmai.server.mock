@@ -22,12 +22,14 @@ func main() {
 		log.Println(ep)
 		if len(ep.Folder) > 0 {
 			http.Handle(ep.Path+"/", http.StripPrefix(ep.Path+"/", http.FileServer(http.Dir(ep.Folder))))
-		} else if ep.Type == "message" {
+		} else if ep.Type == "messages" {
 			http.HandleFunc(ep.Path, response.MessageResponse)
 		} else if ep.Type == "autocomplete" {
 			http.HandleFunc(ep.Path, response.AutocompleteResponse)
 		} else if ep.Type == "trivia" {
 			http.HandleFunc(ep.Path, response.TriviaResponse)
+		} else if ep.Type == "pdmh" {
+			http.HandleFunc(ep.Path, response.PDMHResponse)
 		}
 	}
 

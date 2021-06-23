@@ -1,21 +1,21 @@
 {
+    "type": "suggested_questions",
     "questions": [
         {
-            "text": "When will Covid be over?",
+            "type": "predefined-button",
+            "text": "When will Covid be over?"
+        },
+        {
+            "text": "How does Covid-19 spread?",
             "type": "predefined-button"
         },
         {
-            "type": "predefined-button",
-            "text": "How does Covid-19 spread?"
+            "text": "How can I protect myself?",
+            "type": "predefined-button"
         },
         {
-            "type": "predefined-button",
-            "text": "How can I protect myself?"
-        },
-        {
-            "type": "predefined-button",
-            "text": "What treatments are available for COVID-19?"
+            "text": "What treatments are available for COVID-19?",
+            "type": "predefined-button"
         }
-    ],
-    "type": "suggested_questions"
+    ]
 }

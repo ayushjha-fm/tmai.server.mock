@@ -6,7 +6,7 @@
     "title": "Title of infographic message",
     "description": "text message that is above title",
     "content": {
-            "data": "https://i.ibb.co/k2wX7sf/1.webp",
-            "datatype": "URL / BASE64; specify the type of data"
-        }
+        "data": "https://i.ibb.co/k2wX7sf/1.webp",
+        "datatype": "URL / BASE64; specify the type of data"
+    }
 }

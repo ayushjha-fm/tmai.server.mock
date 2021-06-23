@@ -1,9 +1,9 @@
 {
     "endpoints": [
         {
-            "path": "/message",
+            "path": "/messages",
             "status": 200,
-            "type": "message",
+            "type": "messages",
             "methods": [
                 "GET",
                 "POST"
@@ -22,6 +22,15 @@
             "path": "/trivia",
             "status": 200,
             "type": "trivia",
+            "methods": [
+                "GET",
+                "POST"
+            ]
+        },
+        {
+            "path": "/pdmh",
+            "status": 200,
+            "type": "pdmh",
             "methods": [
                 "GET",
                 "POST"

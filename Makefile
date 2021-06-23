@@ -1,10 +1,10 @@
 prog-name = ./dist/tmai.server.mock
 
 build:
-	go build -o $(prog-name) -ldflags="-s -w" -gcflags=all="-l -B -wb=false" .
+	go build -o $(prog-name) .
 
 install:
-	go install -o $(prog-name) -ldflags="-s -w" .
+	go install -o $(prog-name) .
 
 clean:
 	rm $(prog-name)
